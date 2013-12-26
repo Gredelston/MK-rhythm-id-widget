@@ -47,7 +47,7 @@ $(function () {
 	console.log("loaded"); // sanity check
 
 	$('.addRhythm').click(function() {
-		if (gaveUp)
+		if (locked)
 			return;
 		if (userRhythm[3] == undefined)
 			userRhythm.push($(this).attr("rhythm"));
@@ -55,6 +55,7 @@ $(function () {
 		if ( isCorrect(userRhythm, masterRhythm) )
 		{
 			$('#smileyface').text(":)");
+			locked = true;
 		} else if (userRhythm.length == 4) {
 			$('#smileyface').text(":(")
 		}
@@ -71,7 +72,7 @@ $(function () {
 		userRhythm = new Array();
 		renderRhythm(userRhythm);
 		$('#smileyface').text('')
-		gaveUp = false;
+		locked = false;
 	})
 
 	$('#repeatButton').click(function() {
@@ -81,12 +82,12 @@ $(function () {
 	$('#giveupButton').click(function() {
 		/* Provide the answer to the user. */
 		renderRhythm(masterRhythm);
-		gaveUp = true;
+		locked = true;
 	})
 
 	$('#backspace').click(function() {
 		/* Remove the most recently added beat from userRhythm. */
-		if (gaveUp)
+		if (locked)
 			return;
 		userRhythm.pop();
 		renderRhythm(userRhythm);
