@@ -1,0 +1,30 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+span {
+    border: solid black 1px;
+    border-radius: 3px;
+    margin: 3px;
+    padding: 2px;
+    background-color: #AAAAAA;
+}
+
+div {
+    padding: 5px;
+    border: solid black 1px;
+    border-radius: 3px;
+    float: left;
+    clear: both;
+    margin:5px;
+    width: 90%;
+}
+
+#mainBlock { width: 22%;}
+
+#smileyface { border: none; background-color: #FFFFFF;}
